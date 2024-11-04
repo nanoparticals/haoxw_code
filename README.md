@@ -4,3 +4,4 @@ fix_atoms.py是固定Z坐标以下的的原子位置不动的的脚本
 calculate_prefactor.py是用过渡态CINEB计算动力学指前因子的脚本
 sqs_generate_v6_ir.ipynb是生成MEO特殊准随机结构的脚本
 screen是高通量筛选提取相同名称，能量最低的结构的脚本
+bulk_input_V1.ipynb是在计算bulk能量的时候，为所有cif文件生成vasp输入文件的脚本
