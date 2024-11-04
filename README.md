@@ -1,1 +1,3 @@
-crystal_surface_site_wf.py是MEO切晶面并生成四个输入文件的代码
+crystal_surface_site_wf.py是MEO切晶面并生成四个输入文件并放入提交脚本的代码
+input.py是生成四个输入文件并将脚本放入对应文件夹的代码
+fix_atoms.py是固定Z坐标以下的的原子位置不动的的脚本
