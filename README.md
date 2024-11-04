@@ -14,3 +14,4 @@ generate_structures.py是对活性位点之外的位点生成OH覆盖
 writePOSCAR.py是覆写POSCAR让POSCAR中的元素变规整避免重复的脚本
 generate_potcar.sh是用vaspkit生成POTCAR的bash脚本
 Pt554.py生成554晶面的代码
+Tisub.sh提交所有以Ti开头的文件占用一个节点循环提交任务
