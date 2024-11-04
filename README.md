@@ -6,3 +6,7 @@ sqs_generate_v6_ir.ipynb是生成MEO特殊准随机结构的脚本
 screen是高通量筛选提取相同名称，能量最低的结构的脚本
 bulk_input_V1.ipynb是在计算bulk能量的时候，为所有cif文件生成vasp输入文件的脚本
 adsorp_pymatgen_v8.ipynb是crystal_surface_site_wf.py的notebook版
+move.py调整晶胞在晶格内的位置的脚本
+covcif.py将所有CONTCAR转换为cif文件的脚本
+covpos.py将所有cif文件转换为POSCAR的脚本
+delwavchg.py删除所有文件夹中wavecar和chgcar的脚本
