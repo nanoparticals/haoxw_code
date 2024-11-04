@@ -3,3 +3,4 @@ input.py是生成四个输入文件并将脚本放入对应文件夹的代码
 fix_atoms.py是固定Z坐标以下的的原子位置不动的的脚本
 calculate_prefactor.py是用过渡态CINEB计算动力学指前因子的脚本
 sqs_generate_v6_ir.ipynb是生成MEO特殊准随机结构的脚本
+screen是高通量筛选提取相同名称，能量最低的结构的脚本
