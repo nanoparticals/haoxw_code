@@ -10,3 +10,6 @@ move.py调整晶胞在晶格内的位置的脚本
 covcif.py将所有CONTCAR转换为cif文件的脚本
 covpos.py将所有cif文件转换为POSCAR的脚本
 delwavchg.py删除所有文件夹中wavecar和chgcar的脚本
+generate_structures.py是对活性位点之外的位点生成OH覆盖
+writePOSCAR.py是覆写POSCAR让POSCAR中的元素变规整避免重复的脚本
+generate_potcar.sh是用vaspkit生成POTCAR的bash脚本
