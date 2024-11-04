@@ -2,3 +2,4 @@ crystal_surface_site_wf.py是MEO切晶面并生成四个输入文件并放入提
 input.py是生成四个输入文件并将脚本放入对应文件夹的代码
 fix_atoms.py是固定Z坐标以下的的原子位置不动的的脚本
 calculate_prefactor.py是用过渡态CINEB计算动力学指前因子的脚本
+sqs_generate_v6_ir.ipynb是生成MEO特殊准随机结构的脚本
