@@ -17,7 +17,7 @@ input_files=("POSCAR" "POTCAR" "INCAR" "KPOINTS")
 # 定义 selected_cif_files 的根目录
 root_dir="/home/haoxw/MEOwork/Calculate_dir/selected_cif_file_clean"
 
-# 遍历 root_dir 下所有以 'Cu' 开头的目录
+# 遍历 root_dir 下所有以 'Ti' 开头的目录
 for cu_dir in "$root_dir"/Ti*/; do
     # 检查目录是否存在（防止无匹配的情况）
     if [ -d "$cu_dir" ]; then
@@ -37,15 +37,19 @@ for cu_dir in "$root_dir"/Ti*/; do
                 fi
             done
 
-            # 如果所有文件都存在，则提交作业
+# 如果所有文件都存在，则进一步检查 CONTCAR 文件是否存在
             if [ "$all_files_exist" = true ]; then
-                echo "提交 VASP 作业于目录 $dir"
-                cd "$dir"
-                NP=$(wc -l < "$PBS_NODEFILE")
-                NN=$(sort "$PBS_NODEFILE" | uniq | tee "/tmp/nodes.$$" | wc -l)
-                cat "$PBS_NODEFILE" > "/tmp/nodefile.$$"
-                mpirun -genv I_MPI_DEVICE ssm -machinefile "/tmp/nodefile.$$" -n "$NP" /opt/vasp.5.4.1/bin/vasp_std
-                cd -  # 返回到之前的工作目录
+                if [ -f "$dir/CONTCAR" ]; then
+                    echo "目录 $dir 中已存在 CONTCAR 文件，跳过提交作业。"
+                else
+                    echo "提交 VASP 作业于目录 $dir"
+                    cd "$dir"
+                    NP=$(wc -l < "$PBS_NODEFILE")
+                    NN=$(sort "$PBS_NODEFILE" | uniq | tee "/tmp/nodes.$$" | wc -l)
+                    cat "$PBS_NODEFILE" > "/tmp/nodefile.$$"
+                    mpirun -genv I_MPI_DEVICE ssm -machinefile "/tmp/nodefile.$$" -n "$NP" /opt/vasp.5.4.1/bin/vasp_std
+                    cd -  # 返回到之前的工作目录
+                fi
             fi
         done
     else
@@ -57,4 +61,3 @@ echo "已完成所有作业。"
 
 rm -rf "/tmp/nodefile.$$"
 rm -rf "/tmp/nodes.$$"
-
