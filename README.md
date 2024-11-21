@@ -31,4 +31,4 @@ generate_potcar.sh是用vaspkit生成POTCAR的bash脚本
 Pt554.py生成554晶面的代码
 
 Tisub.sh提交所有以Ti开头的文件占用一个节点循环提交任务
-
+sort_ene.py 是将遗传算法所有存活的结构保存为列表，看哪个结构能量最低
