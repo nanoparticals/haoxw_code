@@ -35,3 +35,4 @@ Tisub.sh提交所有以Ti开头的文件占用一个节点循环提交任务
 sort_ene.py 是将遗传算法所有存活的结构保存为列表，看哪个结构能量最低
 
 sub.py是提交所有任务的python脚本，对每个文件夹执行qsub .sh
+文件夹deepmd是用GCGA产生数据集跑dpgen的时候用到的相关脚本
